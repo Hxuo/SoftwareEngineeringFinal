@@ -1,0 +1,102 @@
+/* Add Service Form - Elegant & Professional */
+body {
+    background: #F5E6CC; /* Light brown, easy on the eyes */
+}
+
+.add-service-container {
+    max-width: 600px; /* Increase width for a better layout */
+    margin: 80px auto;
+    background: #FDF8F4; /* Softer off-white background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    border: 1px solid #E0C7A9; /* Subtle border */
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #A67C52;
+}
+
+/* Form Title */
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3E2C22;
+    margin-bottom: 20px;
+}
+
+/* Form Fields */
+.form-group {
+    display: flex;
+    flex-direction: column; /* Stack labels and inputs */
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3E2C22;
+    margin-bottom: 5px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #E0C7A9;
+    border-radius: 10px;
+    background: #FFF9F3;
+    color: #3E2C22;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Upload Button */
+.upload-btn {
+    width: 100%;
+    padding: 10px;
+    background: #F4E0D9;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3E2C22;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Submit Button */
+.submit-btn {
+    background: #B87333; /* Warmer copper shade */
+    color: white;
+    font-weight: 700;
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    background: #9B5D3D;
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}

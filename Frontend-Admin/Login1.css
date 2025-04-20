@@ -1,0 +1,237 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #DCC1AB; /* Beige Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Container */
+.login-container {
+    background: #DCC1AB;/* General Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #D2A57B; /* Adjusted to match the prototype */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    /* Login Container */
+    .login-container {
+        background: #F5E5D0;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 400px;
+        text-align: center;
+    }
+    
+    /* Title */
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    
+    .logo img {
+        width: 50px;
+        margin-right: 10px;
+    }
+    
+    h2 {
+        color: #5C4033;
+        font-weight: 600;
+    }
+    
+    /* Input Fields */
+    .input-group {
+        position: relative;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    
+    .input-group label {
+        font-weight: 400;
+        color: #5C4033;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .input-group input {
+        width: 100%;
+        padding: 12px 40px;
+        border: 1px solid #5C4033;
+        border-radius: 5px;
+        background: #F2E5D5;
+        color: #5C4033;
+    }
+    
+    .input-group i {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #5C4033;
+    }
+    
+    /* Buttons */
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #B97A57;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    button:hover {
+        background: #A06345;
+    }
+    
+    /* Google Sign-in Button */
+    .google-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #D2691E;
+        margin-top: 15px;
+        gap: 10px;
+    }
+    
+    .google-btn img {
+        width: 20px;
+    }
+    
+    .google-btn:hover {
+        background: #A0522D;
+    }
+    
+    /* Forgot Password and Signup */
+    .extra-links {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+    .extra-links a {
+        text-decoration: none;
+        color: #5C4033;
+        font-weight: 500;
+    }
+    
+    .extra-links a:hover {
+        text-decoration: underline;
+    }
+    
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+}
+
+/* Title */
+h2 {
+    color: #5C4033;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: 400;
+    color: #5C4033;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #5C4033;
+    border-radius: 5px;
+    background: #F2E5D5;
+    color: #5C4033;
+}
+
+/* Error Message */
+.error {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #5C4033;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #3E2B20;
+}
+
+/* Remember Me and Forgot Password */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    color: #5C4033;
+    font-weight: 500;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+/* Signup Link */
+.signup-link {
+    margin-top: 15px;
+}
+
+.signup-link button {
+    background: #8B5E3B;
+}
+
+.signup-link button:hover {
+    background: #6A452A;
+}
+
+/* Google Sign-in Button */
+.google-btn {
+    background: #D2691E;
+}
+
+.google-btn:hover {
+    background: #A0522D;
+}

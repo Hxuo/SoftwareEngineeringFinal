@@ -1,0 +1,777 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Page Background */
+body, html {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #FDF8F2, #F7E6D5);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #4D3B30;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 8%;
+    background: #F5E6DA;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #4D3B30;
+    font-weight: bold;
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-left: 125px; /* Adjust mo ang value para lumapit sa gitna */
+
+}
+
+.logo img {
+    height: 45px;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4D3B30;
+    font-size: 18px;
+    padding: 14px 22px;
+    border-radius: 30px;
+    background: rgba(255, 248, 220, 0.7);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    background: rgba(255, 248, 220, 1);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Logout Button */
+.logout {
+    background: #d1a17a !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+/* Mobile Menu */
+.menu-icon {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #4D3B30;
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background: rgba(222, 184, 135, 0.95);
+        padding: 20px 0;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        font-size: 18px;
+        padding: 12px 20px;
+        width: 100%;
+    }
+}
+
+/* Centering the Staff List Header */
+h2 {
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    font-size: 28px;
+    color: #4D3B30;
+}
+
+/* Wrapper for table and button */
+.table-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+/* Container for the Add Staff button */
+.add-staff-container {
+    text-align: right; /* Align the button to the right (above the Action column) */
+    margin-bottom: 10px; /* Add some space below the button */
+}
+
+/* Add Staff Button */
+.add-staff-btn {
+    background: #d1a17a;
+    color: white;
+    padding: 8px 16px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.add-staff-btn img {
+    width: 40px;
+    height: auto;
+}
+
+.add-staff-btn:hover {
+    background: #C1BAA1;
+    transform: translateY(-2px);
+}
+
+/* Aligning Table */
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    width: 33%; /* Ensure each column gets an equal width */
+}
+
+th {
+    background: #C4A484;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    padding: 15px;
+    font-size: 18px;
+}
+
+tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Links as Buttons */
+a {
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Status Change Button */
+a[href*='toggle_status'] {
+    background: #F5E6DA;
+    color: white;
+}
+
+a[href*='delete'] {
+    background: #F5E6DA;
+    color: white;
+}
+
+/* Add Staff Modal Design */
+.add-staff-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.add-staff-modal-content {
+    background: #F5E6DA;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.add-staff-modal-content:hover {
+    transform: translateY(-5px);
+}
+
+.add-staff-modal-content label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4D3B30;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.add-staff-modal-content input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #D9B89E;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+    background: #FDF8F2;
+}
+
+.add-staff-modal-content input[type="text"]:focus {
+    border-color: #A47551;
+    outline: none;
+}
+
+.add-staff-modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.add-staff-modal-buttons button {
+    background: #4e342e;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    min-width: 100px;
+}
+
+.add-staff-modal-buttons button:hover {
+    background: #4e342e;
+    transform: scale(1.05);
+}
+
+.add-staff-modal-content p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4D3B30;
+    margin-bottom: 20px;
+}
+
+/* Management Password Modal Styles */
+/* Management Password Modal */
+.management-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+/* Management Password Modal */
+.management-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    /* Add these to ensure proper stacking and prevent shifting */
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.management-modal-content {
+    background-color: #F5E6DA;
+    margin: auto; /* Changed from 10% auto to just auto for better centering */
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    position: relative;
+    /* Add these to prevent content shifting */
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    transform: none;
+}
+
+.management-modal-content h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+}
+
+
+/* Improved Password Section */
+.password-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.current-password-display,
+.form-group {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.current-password-display label,
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.password-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-wrapper input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.password-input-wrapper input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.password-toggle-btn img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.password-toggle-btn:hover img {
+    opacity: 1;
+}
+
+/* Improved Password Hint */
+.password-hint {
+    display: flex;
+    align-items: center;
+    margin: 0 0 15px 0;
+    color: #7f8c8d;
+    font-size: 13px;
+    width: 100%;
+}
+
+.hint-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    background-color: #ecf0f1;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Improved Buttons Section */
+.management-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: auto; /* This will push it to the bottom */
+    padding-top: 20px;
+    width: 100%;
+}
+
+.management-change-pw-btn {
+    background-color: #4e342e;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 200px;
+    align-self: flex-end; /* This will keep it aligned to the bottom right */
+    margin-top: auto; /* Pushes the button to the bottom */
+}
+
+.management-confirm-btn {
+    background-color: #4e342e;
+    color: white;
+    min-width: 150px;
+}
+
+.management-confirm-btn:hover {
+    background-color: #3e2723;
+}
+
+.management-cancel-btn {
+    background-color: #6d4c41;
+    color: white;
+    min-width: 100px;
+}
+
+.management-cancel-btn:hover {
+    background-color: #5d4037;
+}
+
+.management-change-pw-btn:hover {
+    background-color: #3e2723;
+}
+
+/* Close Button */
+.management-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+}
+
+.management-close-btn:hover {
+    color: #d9534f;
+}
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.confirm-btn {
+    background-color: white;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.confirm-btn:hover {
+    background-color: #27ae60;
+}
+
+.cancel-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Close Button */
+.management-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+}
+
+.management-close-btn:hover {
+    color: #d9534f; /* Red color on hover */
+}
+
+
+.current-password-display label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.password-display-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.password-display-wrapper input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center; /* Centers the links horizontally */
+    margin-top: 20px;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #d1a17a;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    background-color: #d1a17a;
+}
+
+.pagination a.current-page {
+    font-weight: bold;
+    background-color: #C4A484;
+    color: white;
+}
+
+
+
+.add-management-password-btn {
+    background-color: #d1a17a; /* Matching the button's background color (light brown) */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for a more consistent size */
+    border: none; /* No border */
+    border-radius: 5px; /* Slightly rounded corners for a smoother appearance */
+    font-weight: bold;
+    font-size: 20px; /* Set font size for consistency */
+    display: flex; /* Flexbox for aligning the icon and text */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+    cursor: pointer; /* Change cursor to pointer for interactivity */
+    gap: 8px; /* Space between the text and icon */
+    transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+}
+
+.add-management-password-btn:hover {
+  background-color: #c49e79; /* Slightly darker shade when hovered */
+}
+
+.add-management-password-btn img {
+    width: 35px; /* Adjust icon size to match the button's text size */
+    height: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px; /* Add space between buttons */
+    margin-bottom: 5px; /* Space between buttons and the table */
+}
+
+/* Improved Management Password Form */
+#managePasswordChangeForm {
+    background-color: #f9f1f1;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.management-input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.management-input-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.management-password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.management-password-wrapper input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.management-password-wrapper input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.password-toggle img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.password-toggle:hover img {
+    opacity: 1;
+}
+
+.management-pw-hint {
+    font-size: 12px;
+    color: #888;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.management-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.management-confirm-btn, 
+.management-cancel-btn {
+    background-color: #4e342e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.management-cancel-btn {
+    background-color: #6d4c41;
+}
+
+.management-confirm-btn:hover {
+    background-color: #3e2723;
+}
+
+.management-cancel-btn:hover {
+    background-color: #5d4037;
+}

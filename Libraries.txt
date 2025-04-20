@@ -1,0 +1,11 @@
+Click "Terminal" then "Run Terminal"
+
+Copy paste below
+
+composer require phpmailer/phpmailer kreait/firebase-php paymongo/paymongo-php guzzlehttp/guzzle
+
+Press ENTER
+
+Sk: sk_test_ZwBwLBqrpTGM5SZ6qPyTmoZ8
+
+composer require google/apiclient:^2.0

@@ -1,0 +1,15 @@
+<?php
+include 'database.php';
+
+$query = "SELECT * FROM Appointment ORDER BY DATE, TIME";
+$result = $conn->query($query);
+
+$appointments = [];
+while ($row = $result->fetch_assoc()) {
+    $appointments[] = $row;
+}
+
+echo json_encode($appointments);
+
+$conn->close();
+?>

@@ -1,0 +1,427 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Page Background */
+body, html {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #FDF8F2, #F7E6D5);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #4D3B30;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 8%;
+    background: rgba(222, 184, 135, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #4D3B30;
+    font-weight: bold;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+.logo img {
+    height: 45px;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4D3B30;
+    font-size: 18px;
+    padding: 14px 22px;
+    border-radius: 30px;
+    background: rgba(255, 248, 220, 0.7);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    background: rgba(255, 248, 220, 1);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Logout Button */
+.logout {
+    background: #A0522D !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+/* Mobile Menu */
+.menu-icon {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #4D3B30;
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background: rgba(222, 184, 135, 0.95);
+        padding: 20px 0;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        font-size: 18px;
+        padding: 12px 20px;
+        width: 100%;
+    }
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #E57373;
+    color: white;
+}
+
+.add-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Staff Schedule Container - Maximized */
+.staff-schedule {
+    width: 96%;
+    max-width: 1400px; /* Increased max width */
+    margin: 120px auto 50px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.6); /* Soft Glassmorphism */
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+    overflow-x: auto;
+    padding: 35px;
+}
+
+/* Table - Enlarged */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* Table Headers - Larger & Bolder */
+th {
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-size: 26px; /* Bigger font size */
+    padding: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Table Rows - Enlarged */
+td {
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 24px; /* Bigger text */
+    color: #333;
+    padding: 22px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.08);
+    font-weight: 500;
+}
+
+/* Remove Border from Last Row */
+tr:last-child td {
+    border-bottom: none;
+}
+/* Buttons - Fully Rounded & Elegant */
+button {
+    border: none;
+    padding: 18px 32px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 50px; /* Increased border-radius for softer look */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Delete Button - Softer Look */
+.delete-btn {
+    background: linear-gradient(135deg, #ff6363, #c62828);
+    color: white;
+    border-radius: 50px; /* Fully rounded */
+}
+
+.delete-btn:hover {
+    background: linear-gradient(135deg, #c62828, #ff6363);
+    transform: translateY(-4px) scale(1.07);
+    box-shadow: 0 12px 25px rgba(255, 87, 87, 0.5);
+}
+
+/* Edit Button - Classy Green */
+.edit-btn {
+    background: linear-gradient(135deg, #57a95a, #2e7d32);
+    color: white;
+    border-radius: 50px; /* Fully rounded */
+}
+
+.edit-btn:hover {
+    background: linear-gradient(135deg, #2e7d32, #57a95a);
+    transform: translateY(-4px) scale(1.07);
+    box-shadow: 0 12px 25px rgba(87, 169, 90, 0.5);
+}
+
+/* Add Button - Positioned Bottom Right */
+.add-btn {
+    position: absolute; /* Position relative to the staff-schedule container */
+    bottom: 20px; /* Distance from the bottom of the container */
+    right: 20px; /* Distance from the right of the container */
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 20px 42px;
+    font-size: 24px;
+    border-radius: 60px; /* Fully rounded */
+    box-shadow: 0 12px 30px rgba(106, 17, 203, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Add Button - Hover Effect */
+.add-btn:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-4px) scale(1.07);
+    box-shadow: 0 14px 35px rgba(106, 17, 203, 0.5);
+}
+
+/* Ensure Parent Container is Relative */
+.staff-schedule {
+    position: relative; /* Ensures the button stays inside */
+    padding-bottom: 80px; /* Extra space for button */
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    .staff-schedule {
+        width: 98%;
+        padding: 30px;
+    }
+
+    th, td {
+        font-size: 22px;
+        padding: 20px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 14px 26px;
+    }
+
+    .add-btn {
+        font-size: 20px;
+        padding: 16px 34px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    th, td {
+        font-size: 20px;
+        padding: 18px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    .add-btn {
+        font-size: 18px;
+        padding: 14px 30px;
+    }
+}
+
+/** MODAL TO LAHAT PARA SA BUTTONS/ STAFF PANEL **/
+/* Overlay Background */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Show Modal */
+.modal-overlay.active {
+    display: flex;
+}
+
+/* Modal Box */
+.modal {
+    background: white;
+    padding: 25px;
+    width: 400px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Input Field */
+.modal input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* Modal Buttons */
+.modal-btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+.confirm-btn {
+    background: #57a95a;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background: #2e7d32;
+}
+
+.cancel-btn {
+    background: #E57373;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #c62828;
+}
+
+/* Button Styles */
+.delete-btn, .edit-btn, .add-btn {
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #ff6363, #c62828);
+    color: white;
+}
+
+.edit-btn {
+    background: linear-gradient(135deg, #57a95a, #2e7d32);
+    color: white;
+}
+
+.add-btn {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 16px 32px;
+    font-size: 18px;
+    border-radius: 50px;
+}
+
+        
+

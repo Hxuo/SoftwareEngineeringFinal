@@ -1,0 +1,64 @@
+/* Background */
+body {
+    background: #F5E6CC;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Form Container */
+.add-promo-container {
+    max-width: 600px;
+    margin: 80px auto;
+    background: #FDF8F4;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E0C7A9;
+}
+
+/* Form Title */
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3E2C22;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Fields */
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3E2C22;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    border: 1px solid #E0C7A9;
+    border-radius: 10px;
+    background: #FFF9F3;
+    color: #3E2C22;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: #B87333;
+    color: white;
+    font-weight: 700;
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    background: #9B5D3D;
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}

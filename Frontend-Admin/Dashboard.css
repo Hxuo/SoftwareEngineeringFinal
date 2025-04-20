@@ -1,0 +1,1621 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Page Background */
+body, html {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #FDF8F2, #F7E6D5);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #4D3B30;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: #F5E6DA;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #4D3B30;
+    font-weight: bold;
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-left: 125px; /* Adjust mo ang value para lumapit sa gitna */
+}
+
+.logo img {
+    height: 45px;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4D3B30;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    background: rgba(255, 248, 220, 0.7);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    background: rgba(255, 248, 220, 1);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Logout Button */
+.logout {
+    background: #d1a17a !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+/* Mobile Menu */
+.menu-icon {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #4D3B30;
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background: rgba(222, 184, 135, 0.95);
+        padding: 20px 0;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        font-size: 18px;
+        padding: 12px 20px;
+        width: 100%;
+    }
+}
+
+/* Schedule Table Section */
+.schedule-container {
+    text-align: center;
+    margin-top: 110px; /* Closer to navbar */
+    width: 100%;
+    padding: 30px 5%;
+}
+
+/* Header Styling */
+.schedule-container h2 {
+    font-size: 38px;
+    color: #4D3B30;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+    width: 95%; /* Increased width to 95% for more space */
+    max-width: 1600px; /* Increased max-width to allow the container to stretch more */
+    margin: 0 auto;
+    background: #F5E6DA;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    overflow-x: auto; /* Horizontal scrolling only if needed */
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #FAEBD7;
+}
+
+/* Table Headers */
+th {
+    background: #C4A484;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    border-bottom: 4px solid #A37850;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+/* Table Rows */
+td {
+    font-size: 18px;
+    color: #4D3B30;
+    padding: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Alternate Row Color */
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    min-width: 80px; /* Ensures even width */
+    color: black
+   
+
+}
+.action-btn {
+    width: 120px; /* Same width for all buttons */
+    height: 42px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 20px; /* More rounded corners */
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    color: black;
+    text-align: center;
+}
+
+
+.approve-btn {
+    background-color: #d1a17a;
+}
+
+.approve-btn:hover {
+    background-color: #d1a17a;
+}
+
+.reject-btn {
+    background-color: #d1a17a;
+}
+
+.reject-btn:hover {
+    background-color: #d1a17a;
+}
+
+
+/* Action Button Styles */
+/* Button Styles */
+.done {
+    background-color: #E9EED9;
+    color: white;
+    border-radius: 10px;
+}
+
+.done:hover {
+    background-color: #C1BAA1;
+}
+
+.resched {
+    background-color: #D7D3BF;
+    color: black;
+    border-radius: 10px;
+}
+
+.resched:hover {
+    background-color: #ECEBDE;
+}
+
+.cancel {
+    background-color: #C1BAA1;
+    color: white;
+    border-radius: 10px;
+}
+
+.cancel:hover {
+    background-color: #9A7E6F;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    th, td {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .table-wrapper {
+        height: auto;
+        padding: 15px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    button {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* MODAL STYLING */
+.modal-done {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-done-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Header */
+.modal-done h3 {
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Close Button */
+.close-done {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+    transition: 0.3s;
+}
+
+.close-done:hover {
+    color: #555;
+    transform: scale(1.2);
+}
+
+/* OK Button */
+.ok-button {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background-color: #2E7D32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 120px;
+    font-size: 16px;
+}
+
+.ok-button:hover {
+    background-color: #256d27;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+        /* Reschedule Modal Styling */
+        .modal-resched {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-resched-content {
+            background:  #F5E6DA;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 400px;
+            position: relative;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        /* Modal Header */
+        .modal-resched h3 {
+            color:  #262129;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* Close Button */
+        .close-resched {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: #555;
+            transition: 0.3s;
+        }
+
+        .close-resched:hover {
+            color: #555;
+            transform: scale(1.2);
+        }
+
+        /* Input Fields */
+        .modal-resched input, .modal-resched select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Confirm Button */
+        .confirm-resched {
+            margin-top: 15px;
+            padding: 10px 18px;
+            background-color: #4e342e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .confirm-resched:hover {
+            background-color: #4e342e;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        
+        /* Ensure Success Modal is Hidden Initially */
+#success-modal {
+    display: none; /* Hide modal initially */
+    position: fixed;
+    z-index: 1003; /* Higher than other modals */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content Box */
+#success-modal .modal-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+#success-modal .close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #555;
+    transition: 0.3s;
+}
+
+#success-modal .close:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+/* Success Message */
+#success-modal h3 {
+    font-size: 20px;
+    color: #4CAF50; /* Green success color */
+    margin-bottom: 10px;
+}
+
+/* Success Text */
+#success-modal p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* OK Button */
+#success-modal .confirm {
+    padding: 10px 20px;
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+#success-modal .confirm:hover {
+    background-color: #218838;
+}
+
+/* Animation for Modal Appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure Cancel Modals are Hidden Initially */
+#cancel-confirm-modal, #cancel-success-modal {
+    display: none; /* Hide modal initially */
+    position: fixed;
+    z-index: 1003; /* Higher than other modals */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content Box */
+#cancel-confirm-modal .cancel-confirm-content,
+#cancel-success-modal .cancel-success-content {
+    background: rgba(255, 248, 220, 0.95);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Confirmation Modal Title */
+#cancel-confirm-modal h3 {
+    font-size: 20px;
+    color: #d9534f; /* Red warning color */
+    margin-bottom: 15px;
+}
+
+/* Success Modal Title */
+#cancel-success-modal h3 {
+    font-size: 20px;
+    color: #4CAF50; /* Green success color */
+    margin-bottom: 15px;
+}
+
+/* Close Button */
+#cancel-confirm-modal .close,
+#cancel-success-modal .close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #555;
+    transition: 0.3s;
+}
+
+#cancel-confirm-modal .close:hover,
+#cancel-success-modal .close:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+/* Buttons */
+.cancel-yes {
+    padding: 10px 20px;
+    background-color: #C4A484; /* Red for cancel action */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.cancel-yes:hover {
+    background-color: #C4A484;
+}
+
+.cancel-no {
+    padding: 10px 20px;
+    background-color: #D7D3BF;;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.cancel-no:hover {
+    background-color: #D7D3BF;
+}
+
+.cancel-ok {
+    padding: 10px 20px;
+    background-color: #28a745; /* Green success button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.cancel-ok:hover {
+    background-color: #218838;
+}
+
+/* Animation for Modal Appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Main Calendar Container */
+.calendar-container {
+    background: #F5E6DA; /* Soft Beige */
+    width: 90%;
+    max-width: 1100px; /* Increased max-width */
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+/* Calendar Box */
+
+/* Calendar Header Styling */
+.calendar-header {
+    display: flex;
+    justify-content: space-between; /* Align items to the left and right */
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4d3b30;
+}
+
+
+
+/* Calendar Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table Headers */
+th {
+    background: #d1a17a; /* Light Tan */
+    color: #5d4a3d;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 18px; /* Bigger text */
+}
+
+/* Calendar Cells */
+td {
+    height: 80px; /* Increased height */
+    text-align: center;
+    font-size: 18px; /* Bigger text */
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+td .action-container {
+    display: flex; /* Align items horizontally */
+    justify-content: center; /* Center them horizontally */
+    gap: 15px; /* Adds space between the icons */
+    align-items: center; /* Vertically center the icons */
+}
+
+td .action-container i {
+    font-size: 24px; /* Adjust the icon size if needed */
+    padding: 5px; /* Optional, adds padding around the icons */
+}
+
+
+
+/* Date Slot Styles */
+.available-slot {
+    background: #d4edda; /* Light Green */
+    color: #38754b;
+    font-weight: bold;
+}
+
+.reserved-slot {
+    background: #f8d7da; /* Light Red */
+    color: #a33a3a;
+    font-weight: bold;
+}
+
+.closed-slot {
+    background: #e0e0e0; /* Light Gray */
+    color: #6c757d;
+    font-weight: bold;
+}
+
+/* Hover Effects */
+.available-slot:hover {
+    background: #bce0c6;
+}
+
+.reserved-slot:hover {
+    background: #f3b4b8;
+}
+
+.closed-slot:hover {
+    background: #d6d6d6;
+}
+
+
+/* Legend Styling */
+.legend {
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    gap: 20px;
+    font-size: 16px; /* Bigger font */
+    margin: 15px 0;
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    margin-left: 0; /* Align to the left */
+}
+
+/* Ensure the color indicators are visible */
+.legend div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #5d4a3d;
+}
+
+/* Fixing the visibility of the color blocks */
+.legend span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+}
+
+/* Legend Colors */
+.available { background: #92c9a0; } 
+.reserved { background: #e57373; } 
+.blocked { background: #b0b0b0; } 
+
+
+.legend button {
+    background-color: #d1a17a;
+    color: #5d4a3d;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.legend button:hover {
+    background-color: #d1a17a; /* Slightly darker shade for hover effect */
+}
+
+.legend button:disabled {
+    background-color: #D3C0A5; /* Lighter shade for disabled state */
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.calendar-header h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .calendar-container {
+        width: 95%;
+        padding: 18px;
+    }
+
+    .calendar-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    th, td {
+        font-size: 16px;
+        height: 70px;
+    }
+
+    .legend {
+        flex-direction: column;
+        gap: 10px;
+        padding: 8px;
+    }
+}
+
+
+
+/* SelectedDate Modal Styling */
+.selectedDate-modal {
+    display: none; /* ✅ Ensures the modal is hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* SelectedDate Modal Content */
+.selectedDate-modal-content {
+    background: #F5E6DA;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    width: 95%;
+    max-width: 1300px;
+    height: 400px; /* Keep the reduced height */
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    overflow-y: auto;
+}
+
+/* Close Button */
+.selectedDate-modal-content .selectedDate-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #4D3B30;
+}
+
+.selectedDate-modal-content h2 {
+    font-size: 24px; /* Reduce font size for a more compact header */
+    font-weight: bold;
+    color: #4D3B30;
+    margin-bottom: 15px; /* Reduce margin */
+    text-transform: uppercase;
+}
+
+/* Table inside SelectedDate Modal */
+.selectedDate-modal-content table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #FAEBD7;
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+/* Table Header */
+.selectedDate-modal-content th {
+    background: #C4A484;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-bottom: 2px solid #A37850;
+    text-align: center;
+}
+
+/* Table Rows */
+.selectedDate-modal-content td {
+    font-size: 14px;
+    color: #4D3B30;
+    padding: 1px 1px; /* Adjust padding for compactness */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Alternate Row Color */
+.selectedDate-modal-content tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Hover Effect */
+.selectedDate-modal-content tbody tr:hover {
+    background: rgba(196, 154, 108, 0.4);
+    transition: 0.3s;
+}
+
+/* Buttons inside SelectedDate Modal */
+.selectedDate-modal-content .selectedDate-action-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.selectedDate-modal-content button {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Styles */
+.selectedDate-modal-content .selectedDate-done {
+    background-color: #E9EED9;
+    color: black;
+}
+
+.selectedDate-modal-content .selectedDate-done:hover {
+    background-color: #C1BAA1;
+}
+
+.selectedDate-modal-content .selectedDate-resched {
+    background-color: #D7D3BF;
+    color: black;
+}
+
+.selectedDate-modal-content .selectedDate-resched:hover {
+    background-color: #ECEBDE;
+}
+
+.selectedDate-modal-content .selectedDate-cancel {
+    background-color: #C1BAA1;
+    color: white;
+}
+
+.selectedDate-modal-content .selectedDate-cancel:hover {
+    background-color: #9A7E6F;
+}
+
+/* Pagination button styles */
+/* Pagination button styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    gap: 10px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #d1a17a;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.pagination button:disabled {
+    background-color: #d1a17a; /* Disabled button style */
+    cursor: not-allowed;
+}
+
+#pageIndicator, #modalPageIndicator {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* General Styles for Both Modals */
+.date-modal-container,
+.weekday-modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.date-modal-content,
+.weekday-modal-content {
+    background-color: #F5E6DA;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* General Styles for Both Modals */
+.date-modal-container,
+.weekday-modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.date-modal-content,
+.weekday-modal-content {
+    background-color: #F5E6DA;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Date Modal Specific Styles */
+.date-modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-modal-content {
+    max-width: 800px; /* Keeps the modal wide */
+    width: 90%; /* Ensure it is responsive */
+    max-height: 90vh; /* Limit the height to 90% of the viewport height */
+    overflow-y: auto; /* Allows scrolling if the content exceeds the height */
+    padding: 20px; /* Ensure there is space around the content */
+}
+
+
+.date-modal-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.date-modal-content th,
+.date-modal-content td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.date-modal-content th {
+    background-color: #C4A484;
+    color: white;
+}
+
+.date-modal-content td {
+    cursor: pointer;
+}
+
+.date-modal-content td.selected {
+    background-color: #C4A484;
+    color: white;
+}
+
+/* Weekday Modal Specific Styles */
+.weekday-modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weekday-modal-content {
+    max-width: 400px; /* Smaller for weekday selection */
+    width: 90%;
+}
+
+#weekday-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+#weekday-buttons button {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#weekday-buttons button.active {
+    background-color: #d1a17a;
+    color: white;
+}
+
+/* Confirm Button Styles */
+#confirm-date,
+#confirm-weekday {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #d1a17a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 15px; /* Adjust this value to increase the space between buttons */
+}
+
+#confirm-date:hover,
+#confirm-weekday:hover {
+    background-color: #d1a17a;
+}
+
+.date-modal-content td.selected {
+    background-color: #C4A484;
+    color: white;
+}
+#remove-date {
+    background-color: #d1a17a; /* light red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+#remove-date:hover {
+    background-color: #d1a17a; /* darker red on hover */
+}
+
+/* Calendar Styles */
+#modal-calendar {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#modal-calendar th,
+#modal-calendar td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#modal-calendar th {
+    background-color: #d1a17a;
+    color: white;
+}
+
+#modal-calendar td {
+    cursor: pointer;
+}
+
+#modal-calendar td.selected {
+    background-color: #C4A484;
+    color: white;
+}
+
+/* Confirmation Modal Styles */
+.confirmation-modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+}
+
+.confirmation-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.confirmation-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+#confirm-yes {
+    background-color: #d1a17a;
+    color: white;
+}
+
+#confirm-no {
+    background-color: #ccc;
+    color: black;
+}
+
+#confirm-yes:hover {
+    background-color: #d1a17a;
+}
+
+#confirm-no:hover {
+    background-color: #bbb;
+}   
+
+#modal-calendar td.selected {
+    background-color: #C4A484; /* Highlight color */
+    color: white;
+}
+
+
+/** CALENDAR MODAL **/
+.modal-calendar-resched {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-calendar-content-resched {
+    background-color: rgba(255, 248, 220, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 650px;
+    max-width: 90%;
+    padding: 30px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.calendar-header button {
+    background-color: #4e342e;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.calendar-header button:hover {
+    background-color: #4e342e;
+}
+
+.calendar-days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Optional - Day labels (Sun, Mon, etc.) */
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #555;
+}
+
+.calendar-day, .blank-day {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.calendar-day:hover {
+    background-color: #ececec;
+    transform: scale(1.1);
+}
+
+.calendar-day.available {
+    background-color: #4e342e;
+    color: white;
+}
+
+.calendar-day.booked {
+    background-color: #f44336;
+    color: white;
+}
+
+.calendar-day.unavailable {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+    pointer-events: none; /* Disable clicking for unavailable days */
+}
+
+/* New - Current Date Highlight */
+.calendar-day.today {
+    border: 2px solid #C4A484;
+    font-weight: bold;
+}
+
+/* New - Selected Date */
+.calendar-day.selected {
+    background-color: #1976d2;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Legend Section */
+.calendar-legend {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    font-size: 0.9rem;
+}
+
+.legend-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.legend-dot.available {
+    background-color: #4e342e;
+}
+
+.legend-dot.booked {
+    background-color: #f44336;
+}
+
+.legend-dot.unavailable {
+    background-color: #e0e0e0;
+}
+
+/* Confirm Button */
+.confirm-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #4e342e;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.confirm-button:hover {
+    background-color: #45a045;
+}
+
+/* Close Button */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+/* Refund Request Modal Styles */
+.refund-request-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.refund-request-modal-content {
+    background-color: #F5E6DA;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Match width to .table-wrapper (80%) */
+    max-width: 1400px; /* Match max-width to .table-wrapper (1400px) */
+    border-radius: 8px;
+    max-height: 80vh; /* Keeps the height manageable */
+    overflow-y: auto; /* Allow vertical scrolling if the content exceeds the height */
+    position: relative; /* For positioning the close button inside */
+}
+
+.refund-request-btn {
+    background-color: #C4A484;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    /* Adjusting the margin-left to shift it to the left */
+    margin-left: 1145px; /* Decrease or increase as needed */
+}
+
+
+
+.refund-request-btn:hover {
+    background-color: #d1a17a;
+}
+
+/* Reject Reason Modal Styles */
+.reject-reason-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.reject-reason-modal-content {
+    background-color: #F5E6DA;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    max-width: 500px;
+    border-radius: 8px;
+    height: 310px;
+}
+
+.reject-reason-modal-content textarea {
+    width: 100%;
+    height: 150px;
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cancel-btn, .confirm-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cancel-btn {
+    background-color: #4e342e;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #4e342e;
+}
+
+.confirm-btn {
+    background-color: #4D3B30;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background-color: #3a2d24;
+}
+

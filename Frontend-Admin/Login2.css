@@ -1,0 +1,194 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #1A1A1A, #3D2C2E); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+/* Login Container */
+.login-container {
+    width: 40%;  /* Makes the container take up 40% of the available width */
+    max-width: 600px;  /* Maximum width to prevent it from becoming too large */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;  /* Convert padding to rem */
+    border-radius: 0.75rem;  /* Use rem for border radius */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);  /* Adjust box-shadow with rem */
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    position: relative;
+    text-align: center;
+}
+
+/* Header */
+h2 {
+    color: #ffd28e;
+    font-size: 2.25rem;  /* Responsive font size */
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+/* Input Styles */
+.input-group {
+    width: 100%;
+    margin-bottom: 1.5rem;  /* Adjusted margin for consistent spacing */
+}
+
+.input-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #ffd28e;
+    text-align: left;
+}
+
+/* Input box styles */
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    outline: none;
+    transition: 0.4s ease-in-out;
+    box-shadow: inset 0 0 14px rgba(255, 255, 255, 0.1);
+}
+
+/* Password Group (For show/hide functionality) */
+.password-group {
+    width: 100%;
+    position: relative;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffd28e;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Error Message */
+.error {
+    color: #f44336;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Remember Me & Forgot Password */
+.options {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: #fff;
+}
+
+.forgot-password {
+    color: #ffd28e;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Sign-in Button */
+button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #e0a967, #c47251);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    margin-bottom: 1.5rem;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Google Sign-in Button */
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    font-size: 1rem;
+}
+
+.google-btn img {
+    width: 1.5rem;
+    margin-right: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .login-container {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 2rem;  /* Slightly smaller header font for mobile */
+    }
+
+    .input-group input {
+        font-size: 0.875rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .google-btn {
+        font-size: 0.875rem;
+        padding: 1rem;
+    }
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .login-container {
+        width: 90%;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    .input-group input {
+        font-size: 14px;
+    }
+    button {
+        font-size: 20px;
+        padding: 14px;
+    }
+    .google-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
